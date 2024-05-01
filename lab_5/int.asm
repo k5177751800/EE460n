@@ -1,0 +1,18 @@
+.ORIG   x1200
+
+ADD R6, R6, #-2
+STW R0, R6, #0
+ADD R6, R6, #-2
+STW R1, R6, #-2
+LEA R1, MEMADD
+LDW R1, R1, #0
+LDW R0, R1, #0
+ADD R0, R0, #1
+STW R0, R1, #0
+LDW R0, R6, #-2
+ADD R6, R6, #2
+LDW R1, R6, #-4
+ADD R6, R6, #2
+RTI
+MEMADD    .FILL   x4000
+.END

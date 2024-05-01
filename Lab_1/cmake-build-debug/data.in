@@ -1,0 +1,36 @@
+    .ORIG x3000
+A   ADD R1, R2, #1
+    ADD R3, R4, R7
+    AND R5, R6, #1
+    AND R7, R0, R7
+    BR A
+    BRNZP A
+    BRN A
+    BRZ A
+    BRP A
+    BRNZ A
+    BRNP A
+    BRZP A
+    JMP R1
+    JSR A
+    JSRR R1
+    LDB R0, R3, #-10
+    LDW R0, R0, x10
+    LEA R0, ending
+    RTI
+    LSHF R0, R0, #2
+    RSHFA R0, R0, #2
+    RSHFL R0, R0, #2
+    STB R0, R1, #-10
+    STW R0, R1, #-10
+    TRAP x23
+    XOR R0, R1, R3
+    XOR R3, R3, #10
+
+ending HALT
+
+    .FILL #1
+    .FILL x-1
+    .FILL #-1
+    .FILL x1
+    .END
